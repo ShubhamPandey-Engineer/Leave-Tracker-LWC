@@ -1,0 +1,43 @@
+<template>
+    <lightning-card class="cmp-wrapper slds-grid_frame">
+
+         <!-- display custom pop-up component(toast/confirm box)-->
+        <c-modal-cmp toast-message = {toast.toastMessage} toast-variant = {toast.toastVariant} ></c-modal-cmp>
+        <lightning-spinner variant="brand" if:true={dataLoading} title="Please wait..."></lightning-spinner>
+        <lightning-layout multiple-rows horizontal-align="center" pull-to-boundary="small">
+            <lightning-layout-item size="12" medium-device-size="6" small-device-size="3" class="calendar-help">
+                <lightning-badge label="Weekends" class="leave-help_text_weekends" title="Weekends"></lightning-badge>
+                <lightning-badge label="Selected" class="leave-help_text_selected" title="Selected Leaves"></lightning-badge>
+                <lightning-badge label="Planned" class="leave-help_text_confirmed" title="Planned Leaves"></lightning-badge>
+
+            </lightning-layout-item>
+
+            <lightning-layout-item size="12" medium-device-size="4" small-device-size="3" padding="around-small"
+                class="slds-p-around_small slds-grid slds-grid_vertical-align-end slds-grid_align-space">
+                <lightning-button-icon-stateful variant="border-filled" name="PrevBtn" disabled={disableCalPrevBtn} icon-name="utility:chevronleft"
+                     onclick={handleCalendarNavigation}
+                    alternative-text="Prev"></lightning-button-icon-stateful>
+                <lightning-combobox class="slds-size_x-small" options={monthNamesList} value={selectedMonth}
+                    onchange={handleMonthChange}></lightning-combobox>
+                <lightning-button-icon-stateful name ='NextBtn' variant="border-filled" disabled={disableCalNxtBtn}  icon-name="utility:chevronright"
+                    onclick={handleCalendarNavigation} alternative-text="Next"></lightning-button-icon-stateful>
+            </lightning-layout-item>
+
+            <lightning-layout-item size="12">
+
+
+                <section class="calendar_wrapper slds-m-small" lwc:dom="manual" onclick={handleDateChange}>
+                </section>
+            </lightning-layout-item>
+
+            <lightning-layout-item size="12" class="slds-align_absolute-center slds-p-around_small">
+                <lightning-button title="Save Dates" label="Save Dates" variant="brand" class="slds-p-around_small"
+                    onclick={saveSelectedDates}></lightning-button>
+                <lightning-button title="Cancel" label="Cancel" class="slds-p-around_small"
+                    onclick={cancelDateSelection}></lightning-button>
+
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+
+</template>

@@ -1,0 +1,80 @@
+:host{
+--slds-c-card-color-background : #68e9c0;
+--primary-background-color:#68e9c0;
+}
+
+.calendar_wrapper{
+    display: flex;
+    justify-content: center;
+}
+.calendar_table{
+background-color: #FFF;
+width: 95%;
+border:.5rem solid #aeedd8;
+}
+
+
+.calendar-data_cell, .calendar-month_name{
+    padding: 0.2rem;
+    height: 4rem;
+    width: 10rem;
+    text-align: center;
+    border: 2px solid var(--primary-background-color);
+    font-weight: bold;
+
+}
+
+.valid-date:hover{
+    cursor: pointer;
+}
+
+.inactive-date:hover{
+    cursor:not-allowed;
+}
+
+
+.calendar-help{
+    display: flex;
+    flex-direction: column;
+}
+
+.leave-help_text_confirmed,.leave-help_text_selected,.leave-help_text_weekends{
+    width: 10rem;
+    margin: .3rem;
+    color:#FFF;
+    text-align: center;
+
+}
+
+.leave-help_text_weekends{
+    background:  #d1d7d4;
+}
+
+.leave-help_text_selected{
+    background: rgb(25, 140, 234);
+}
+
+.leave-help_text_confirmed{
+    background:  rgb(239, 184, 113);
+}
+
+
+.selected-date{
+    color:#FFF;
+    background-color: rgb(25, 140, 234);
+}
+
+
+.inactive-date{
+    background-color:#d1d7d4;
+}
+
+
+.confirmed-date{
+    background-color: rgb(239, 184, 113);
+}
+
+
+.cancelled-date{
+    
+}

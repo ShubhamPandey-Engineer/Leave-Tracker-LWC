@@ -1,7 +1,7 @@
 <div>
   <h4>Description -</h4>
   <p>
-    A Lightning Web Component(<b>LWC</b>) to track/manage user leave records. Providing an easy and configurable way to record leaves.</b>.
+    A Lightning Web Component(<b>LWC</b>) to track/manage user leave records. Providing an easy and configurable way to record leaves</b>.
   </p>
 </div>
 
